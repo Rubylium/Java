@@ -25,33 +25,13 @@ public class TP3 {
         Ordinateur o7 = new Ordinateur();
         
         String num;
-        System.out.println("Num de l'ordinateur n°1");
-        num = Clavier.lireString();
-        o1.setNumero(num);
-        
-        System.out.println("Num de l'ordinateur n°2");
-        num = Clavier.lireString();
-        o2.setNumero(num);
-        
-        System.out.println("Num de l'ordinateur n°3");
-        num = Clavier.lireString();
-        o3.setNumero(num);
-        
-        System.out.println("Num de l'ordinateur n°4");
-        num = Clavier.lireString();
-        o4.setNumero(num);
-        
-        System.out.println("Num de l'ordinateur n°5");
-        num = Clavier.lireString();
-        o5.setNumero(num);
-        
-        System.out.println("Num de l'ordinateur n°6");
-        num = Clavier.lireString();
-        o6.setNumero(num);
-        
-        System.out.println("Num de l'ordinateur n°7");
-        num = Clavier.lireString();
-        o7.setNumero(num);
+        o1.setNumero("o1");
+        o2.setNumero("o2");
+        o3.setNumero("o3");
+        o4.setNumero("o4");
+        o5.setNumero("o5");
+        o6.setNumero("o6");
+        o7.setNumero("o7");
                 
         Salle s1 = new Salle();
         Salle s2 = new Salle();
@@ -67,7 +47,7 @@ public class TP3 {
         
         s1.ajouterOrdi(o1);
         s1.ajouterOrdi(o2);
-        
+      
         s2.ajouterOrdi(o3);
         s2.ajouterOrdi(o4);
         s2.ajouterOrdi(o5);
@@ -77,9 +57,30 @@ public class TP3 {
         System.out.println("Nombre ordi "+ s1.getNom() +": " + s1.getNbOrdi());
         System.out.println("Nombre ordi "+ s2.getNom() +": " + s2.getNbOrdi());
         
-        s1.ajouterOrdi(o4);
-        s1.ajouterOrdi(o5);
+        s2.changerdeSalle(o4, s1);
+        s2.changerdeSalle(o5, s1);
         
+        System.out.println("Nombre ordi "+ s1.getNom() +": " + s1.getNbOrdi());
+        System.out.println("Nombre ordi "+ s2.getNom() +": " + s2.getNbOrdi());
+        
+        Salle s3 = new Salle();
+        
+        System.out.println("Nom de la salle n°3");
+        num = Clavier.lireString();
+        s3.setNom(num);
+        
+        s1.changerdeSalle(o1, s3);
+        s1.changerdeSalle(o2, s3);
+      
+        s2.changerdeSalle(o3, s3);
+        s1.changerdeSalle(o4, s3);
+        s1.changerdeSalle(o5, s3);
+        s2.changerdeSalle(o6, s3);
+        s2.changerdeSalle(o7, s3);
+        
+        System.out.println("Nombre ordi "+ s1.getNom() +": " + s1.getNbOrdi());
+        System.out.println("Nombre ordi "+ s2.getNom() +": " + s2.getNbOrdi());
+        System.out.println("Nombre ordi "+ s3.getNom() +": " + s3.getNbOrdi());
     }
     
     
